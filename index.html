@@ -101,7 +101,7 @@
 
       /* Existing dark sections */
       .dark .bg-slate-900 {
-        background-color: #111319;
+        background-color: #151718;
       }
 
       .dark .bg-slate-950 {
@@ -111,7 +111,7 @@
       /* Fixed navigation and mobile menu */
       .dark header {
         border-color: rgba(58, 61, 62, 0.9);
-        background-color: rgba(38, 41, 41, 0.92);
+        background-color: rgba(38, 41, 41, 0.94);
       }
 
       .dark #mobile-menu {
@@ -162,7 +162,7 @@
 
       /* Hero portrait's offset background */
       .dark .bg-blue-100 {
-        background-color: #26384a;
+        background-color: #303638;
       }
 
       /* Keep primary action buttons readable */
@@ -182,11 +182,6 @@
       .dark .hover\:text-accent:hover,
       .dark .hover\:text-accent-dark:hover {
         color: #8bc7ff;
-      }
-
-      /* White secondary buttons become charcoal */
-      .dark .bg-white.text-slate-700 {
-        color: #e8e6e3;
       }
 
       /* Hover states */
@@ -216,7 +211,9 @@
     </style>
   </head>
 
-  <body class="bg-slate-50 font-sans text-ink antialiased">
+  <body
+    class="bg-slate-50 font-sans text-ink antialiased transition-colors duration-300"
+  >
     <header
       class="fixed inset-x-0 top-0 z-50 border-b border-slate-300/80 bg-slate-100/90 backdrop-blur"
     >
@@ -228,7 +225,27 @@
           Rods<span class="text-accent">Coimbra</span>
         </a>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-3">
+          <div
+            class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex"
+          >
+            <a class="transition hover:text-accent" href="#about">About</a>
+            <a class="transition hover:text-accent" href="#experience"
+              >Experience</a
+            >
+            <a class="transition hover:text-accent" href="#skills">Skills</a>
+            <a class="transition hover:text-accent" href="#projects"
+              >Projects</a
+            >
+            <a class="transition hover:text-accent" href="#highlights"
+              >Highlights</a
+            >
+            <a class="transition hover:text-accent" href="#education"
+              >Education</a
+            >
+            <a class="transition hover:text-accent" href="#contact">Contact</a>
+          </div>
+
           <button
             id="theme-toggle"
             type="button"
@@ -270,7 +287,7 @@
           <button
             id="menu-button"
             type="button"
-            class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 md:hidden"
+            class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 dark:text-[#e8e6e3] md:hidden"
             aria-label="Toggle navigation"
             aria-controls="mobile-menu"
             aria-expanded="false"
@@ -287,21 +304,6 @@
             </svg>
           </button>
         </div>
-
-        <div
-          class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex"
-        >
-          <a class="transition hover:text-accent" href="#about">About</a>
-          <a class="transition hover:text-accent" href="#experience"
-            >Experience</a
-          >
-          <a class="transition hover:text-accent" href="#skills">Skills</a>
-          <a class="transition hover:text-accent" href="#projects">Projects</a>
-          <a class="transition hover:text-accent" href="#highlights"
-            >Highlights</a
-          >
-          <a class="transition hover:text-accent" href="#contact">Contact</a>
-        </div>
       </nav>
 
       <div
@@ -316,6 +318,7 @@
           <a class="mobile-link" href="#skills">Skills</a>
           <a class="mobile-link" href="#projects">Projects</a>
           <a class="mobile-link" href="#highlights">Highlights</a>
+          <a class="mobile-link" href="#education">Education</a>
           <a class="mobile-link" href="#contact">Contact</a>
         </div>
       </div>
@@ -359,11 +362,14 @@
               >
                 Get in Touch
               </a>
+
               <a
-                href="#projects"
+                href="assets/documents/Curriculum_Vitae.pdf"
+                target="_blank"
+                rel="noreferrer"
                 class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200"
               >
-                View Projects
+                Download CV
               </a>
             </div>
           </div>
@@ -436,7 +442,6 @@
             Work and research history
           </h2>
         </div>
-
         <div class="mt-12 border-l border-slate-300 pl-7 sm:pl-10">
           <article class="relative pb-12">
             <span
@@ -469,7 +474,6 @@
               </li>
             </ul>
           </article>
-
           <article class="relative">
             <span
               class="timeline-dot absolute -left-[33px] top-1 h-3 w-3 rounded-full bg-accent sm:-left-[45px]"
@@ -562,7 +566,6 @@
             planning, and reliable system integration.
           </p>
         </div>
-
         <div class="mt-12 grid gap-6 md:grid-cols-2">
           <article
             class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
@@ -594,7 +597,6 @@
               >
             </div>
           </article>
-
           <article
             class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
@@ -626,7 +628,6 @@
               >
             </div>
           </article>
-
           <article
             class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
@@ -657,7 +658,6 @@
               >
             </div>
           </article>
-
           <article
             class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
@@ -679,14 +679,18 @@
                 Full-Body Local Planning with Reinforcement Learning
               </h3>
               <p class="mt-4 leading-7 text-muted">
-                Co-authored and presented research on full-body local planning
-                of a mobile manipulator using reinforcement learning at the 2026
-                IEEE International Conference on Autonomous Robot Systems and
-                Competitions.
+                First author of a research paper on full-body local planning of
+                a mobile manipulator using reinforcement learning, presented at
+                the 2026 IEEE International Conference on Autonomous Robot
+                Systems and Competitions.
               </p>
-              <p class="mt-6 text-sm font-medium text-slate-500">
-                IEEE · Reinforcement Learning · Mobile Manipulation
-              </p>
+              <a
+                class="mt-6 inline-block text-sm font-semibold text-accent transition hover:text-accent-dark"
+                href="https://ieeexplore.ieee.org/document/11523319"
+                target="_blank"
+                rel="noreferrer"
+                >View paper <span aria-hidden="true">→</span></a
+              >
             </div>
           </article>
         </div>
@@ -717,7 +721,6 @@
               >Work together <span aria-hidden="true">→</span></a
             >
           </div>
-
           <div class="mt-12 grid gap-6 md:grid-cols-12">
             <figure
               class="overflow-hidden rounded-xl border border-line bg-slate-50 md:col-span-7"
@@ -744,7 +747,6 @@
                 </p>
               </figcaption>
             </figure>
-
             <div class="grid gap-6 md:col-span-5">
               <figure
                 class="overflow-hidden rounded-xl border border-line bg-slate-50"
@@ -766,7 +768,6 @@
                   </h3>
                 </figcaption>
               </figure>
-
               <figure
                 class="overflow-hidden rounded-xl border border-line bg-slate-50"
               >
@@ -810,7 +811,7 @@
               </p>
               <p class="mt-4 leading-7 text-muted">
                 Specialization in control, robotics, and artificial
-                intelligence. Final grade: 18/20. Thesis: full-body motion
+                intelligence. Final grade: 18/20. Thesis: Full-body motion
                 planning and control of a mobile manipulator using reinforcement
                 learning. Academic Merit Certificate in both years.
               </p>
@@ -846,30 +847,28 @@
               Let's build something useful.
             </h2>
             <p class="mt-5 text-lg leading-8 text-muted">
-              Interested in robotics, autonomy, research collaboration, or
-              engineering opportunities? I would be glad to hear from you.
+              Do you have an opportunity in robotics research, autonomous
+              systems, or robotics software engineering? I would be glad to hear
+              from you.
             </p>
             <div class="mt-8 flex flex-wrap gap-4">
               <a
                 href="mailto:rodrigo.coimbra@tecnico.ulisboa.pt"
                 class="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark focus:outline-none focus:ring-4 focus:ring-blue-200"
                 >rodrigo.coimbra@tecnico.ulisboa.pt</a
-              >
-              <a
+              ><a
                 href="https://www.linkedin.com/in/rodrigo-manuel-coimbra/"
                 target="_blank"
                 rel="noreferrer"
                 class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
                 >LinkedIn</a
-              >
-              <a
+              ><a
                 href="https://github.com/RodsCoimbra"
                 target="_blank"
                 rel="noreferrer"
                 class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
                 >GitHub</a
-              >
-              <a
+              ><a
                 href="assets/documents/Curriculum_Vitae.pdf"
                 target="_blank"
                 rel="noreferrer"
@@ -897,13 +896,11 @@
 
       function updateThemeToggle() {
         const isDark = document.documentElement.classList.contains("dark");
-
         themeToggle.setAttribute("aria-pressed", String(isDark));
         themeToggle.setAttribute(
           "aria-label",
           isDark ? "Switch to light mode" : "Switch to dark mode",
         );
-
         sunIcon.classList.toggle("hidden", !isDark);
         moonIcon.classList.toggle("hidden", isDark);
       }
@@ -912,14 +909,12 @@
 
       themeToggle.addEventListener("click", () => {
         const isDark = document.documentElement.classList.toggle("dark");
-
         localStorage.setItem("theme", isDark ? "dark" : "light");
         updateThemeToggle();
       });
 
       menuButton.addEventListener("click", () => {
         const isOpen = !mobileMenu.classList.contains("hidden");
-
         mobileMenu.classList.toggle("hidden");
         menuButton.setAttribute("aria-expanded", String(!isOpen));
       });
