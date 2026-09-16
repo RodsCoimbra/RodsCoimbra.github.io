@@ -8,10 +8,22 @@
       content="Portfolio of Rodrigo Coimbra — Robotics Research Engineer working on autonomous navigation, manipulation, and learning-based planning."
     />
     <title>Rodrigo Coimbra | Robotics Research Engineer</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
 
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: "class",
         theme: {
           extend: {
             colors: {
@@ -63,12 +75,150 @@
       .project-card:hover .project-image {
         transform: scale(1.04);
       }
+
+      /* Dark mode */
+      .dark {
+        color-scheme: dark;
+      }
+
+      .dark body {
+        background-color: #181a1b;
+        color: #e8e6e3;
+      }
+
+      /* Main light backgrounds become neutral charcoal surfaces */
+      .dark .bg-slate-50 {
+        background-color: #181a1b;
+      }
+
+      .dark .bg-white {
+        background-color: #202324;
+      }
+
+      .dark .bg-slate-100 {
+        background-color: #2a2d2e;
+      }
+
+      /* Existing dark sections */
+      .dark .bg-slate-900 {
+        background-color: #111319;
+      }
+
+      .dark .bg-slate-950 {
+        background-color: #111213;
+      }
+
+      /* Fixed navigation and mobile menu */
+      .dark header {
+        border-color: rgba(58, 61, 62, 0.9);
+        background-color: rgba(38, 41, 41, 0.92);
+      }
+
+      .dark #mobile-menu {
+        border-color: #3a3d3e;
+        background-color: #181a1b;
+      }
+
+      /* Headings */
+      .dark .text-slate-950,
+      .dark .text-slate-900 {
+        color: #e8e6e3;
+      }
+
+      /* Body text and navigation */
+      .dark .text-slate-700,
+      .dark .text-slate-600,
+      .dark .text-muted,
+      .dark .text-ink {
+        color: #c8c6c3;
+      }
+
+      /* Labels, dates, and secondary copy */
+      .dark .text-slate-500,
+      .dark .text-slate-400 {
+        color: #a6a39f;
+      }
+
+      /* Borders */
+      .dark .border-line,
+      .dark .border-slate-200,
+      .dark .border-slate-300,
+      .dark .border-slate-700 {
+        border-color: #3a3d3e;
+      }
+
+      .dark .border-slate-200\/80 {
+        border-color: rgba(58, 61, 62, 0.8);
+      }
+
+      .dark .border-slate-800 {
+        border-color: #2a2d2e;
+      }
+
+      /* Skills cards */
+      .dark .bg-slate-800\/70 {
+        background-color: rgba(32, 35, 36, 0.92);
+      }
+
+      /* Hero portrait's offset background */
+      .dark .bg-blue-100 {
+        background-color: #26384a;
+      }
+
+      /* Keep primary action buttons readable */
+      .dark .bg-accent {
+        background-color: #287ed8;
+      }
+
+      .dark .hover\:bg-accent-dark:hover {
+        background-color: #3d96ff;
+      }
+
+      /* Accent text and links */
+      .dark .text-accent {
+        color: #70b7ff;
+      }
+
+      .dark .hover\:text-accent:hover,
+      .dark .hover\:text-accent-dark:hover {
+        color: #8bc7ff;
+      }
+
+      /* White secondary buttons become charcoal */
+      .dark .bg-white.text-slate-700 {
+        color: #e8e6e3;
+      }
+
+      /* Hover states */
+      .dark .hover\:bg-slate-100:hover,
+      .dark .hover\:bg-slate-200:hover {
+        background-color: #2a2d2e;
+      }
+
+      .dark .hover\:border-slate-400:hover {
+        border-color: #595d5e;
+      }
+
+      /* Timeline */
+      .dark .timeline-dot {
+        box-shadow: 0 0 0 5px #181a1b;
+      }
+
+      /* Accessible keyboard focus rings */
+      .dark .focus\:ring-blue-100:focus,
+      .dark .focus\:ring-blue-200:focus {
+        --tw-ring-color: rgba(61, 150, 255, 0.45);
+      }
+
+      .dark .focus\:ring-slate-200:focus {
+        --tw-ring-color: rgba(89, 93, 94, 0.7);
+      }
     </style>
   </head>
 
   <body class="bg-slate-50 font-sans text-ink antialiased">
     <header
-      class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-slate-50/90 backdrop-blur"
+      class="fixed inset-x-0 top-0 z-50 border-b border-slate-300/80 bg-slate-100/90 backdrop-blur"
     >
       <nav
         class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
@@ -78,25 +228,65 @@
           Rods<span class="text-accent">Coimbra</span>
         </a>
 
-        <button
-          id="menu-button"
-          type="button"
-          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 md:hidden"
-          aria-label="Toggle navigation"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <svg
-            class="h-5 w-5"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
+        <div class="flex items-center gap-2">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="inline-flex h-9 w-9 items-center justify-center rounded-lg text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 dark:text-[#e8e6e3]"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+            title="Toggle colour theme"
           >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+            <svg
+              id="sun-icon"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              ></path>
+            </svg>
+
+            <svg
+              id="moon-icon"
+              class="hidden h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8Z"
+              ></path>
+            </svg>
+          </button>
+
+          <button
+            id="menu-button"
+            type="button"
+            class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 md:hidden"
+            aria-label="Toggle navigation"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
 
         <div
           class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex"
@@ -344,7 +534,8 @@
               <h3 class="font-bold text-white">Communication</h3>
               <p class="mt-3 leading-7 text-slate-300">
                 Portuguese (native), English (C1), technical presentations,
-                interdisciplinary collaboration, science outreach
+                collaboration with international research teams, science
+                outreach
               </p>
             </div>
           </div>
@@ -532,7 +723,7 @@
               class="overflow-hidden rounded-xl border border-line bg-slate-50 md:col-span-7"
             >
               <img
-                src="assets/images/eurobin-project.jpeg"
+                src="assets/images/eurobin-all-teams.jpeg"
                 alt="Robotics demonstration at a euROBIN event"
                 class="aspect-[16/10] w-full object-cover"
                 width="1600"
@@ -700,9 +891,35 @@
     <script>
       const menuButton = document.getElementById("menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
+      const themeToggle = document.getElementById("theme-toggle");
+      const sunIcon = document.getElementById("sun-icon");
+      const moonIcon = document.getElementById("moon-icon");
+
+      function updateThemeToggle() {
+        const isDark = document.documentElement.classList.contains("dark");
+
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+        themeToggle.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light mode" : "Switch to dark mode",
+        );
+
+        sunIcon.classList.toggle("hidden", !isDark);
+        moonIcon.classList.toggle("hidden", isDark);
+      }
+
+      updateThemeToggle();
+
+      themeToggle.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        updateThemeToggle();
+      });
 
       menuButton.addEventListener("click", () => {
         const isOpen = !mobileMenu.classList.contains("hidden");
+
         mobileMenu.classList.toggle("hidden");
         menuButton.setAttribute("aria-expanded", String(!isOpen));
       });
