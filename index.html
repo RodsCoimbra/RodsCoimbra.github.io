@@ -8,6 +8,7 @@
       content="Portfolio of Rodrigo Coimbra — Robotics Research Engineer working on autonomous navigation, manipulation, and learning-based planning."
     />
     <title>Rodrigo Coimbra | Robotics Research Engineer</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -20,23 +21,51 @@
               accent: "#2563eb",
               "accent-dark": "#1d4ed8",
             },
-            boxShadow: { soft: "0 14px 40px rgba(15, 23, 42, 0.10)" },
+            boxShadow: {
+              soft: "0 14px 40px rgba(15, 23, 42, 0.10)",
+              image: "0 20px 50px rgba(15, 23, 42, 0.16)",
+            },
           },
         },
       };
     </script>
+
     <style>
       html {
         scroll-behavior: smooth;
       }
+
       section {
         scroll-margin-top: 5rem;
       }
+
       .timeline-dot {
         box-shadow: 0 0 0 5px #f8fafc;
       }
+
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 1rem;
+        background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.2),
+          transparent 42%
+        );
+        pointer-events: none;
+      }
+
+      .project-image {
+        transition: transform 500ms ease;
+      }
+
+      .project-card:hover .project-image {
+        transform: scale(1.04);
+      }
     </style>
   </head>
+
   <body class="bg-slate-50 font-sans text-ink antialiased">
     <header
       class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-slate-50/90 backdrop-blur"
@@ -45,13 +74,14 @@
         class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
         aria-label="Primary navigation"
       >
-        <a href="#home" class="text-sm font-bold tracking-tight text-slate-900"
-          >Rods<span class="text-accent">Coimbra</span></a
-        >
+        <a href="#home" class="text-sm font-bold tracking-tight text-slate-900">
+          Rods<span class="text-accent">Coimbra</span>
+        </a>
+
         <button
           id="menu-button"
           type="button"
-          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-slate-200 md:hidden"
+          class="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-blue-100 md:hidden"
           aria-label="Toggle navigation"
           aria-controls="mobile-menu"
           aria-expanded="false"
@@ -67,6 +97,7 @@
             <path d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+
         <div
           class="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex"
         >
@@ -76,9 +107,13 @@
           >
           <a class="transition hover:text-accent" href="#skills">Skills</a>
           <a class="transition hover:text-accent" href="#projects">Projects</a>
+          <a class="transition hover:text-accent" href="#highlights"
+            >Highlights</a
+          >
           <a class="transition hover:text-accent" href="#contact">Contact</a>
         </div>
       </nav>
+
       <div
         id="mobile-menu"
         class="hidden border-t border-slate-200 bg-slate-50 px-5 py-4 md:hidden"
@@ -90,6 +125,7 @@
           <a class="mobile-link" href="#experience">Experience</a>
           <a class="mobile-link" href="#skills">Skills</a>
           <a class="mobile-link" href="#projects">Projects</a>
+          <a class="mobile-link" href="#highlights">Highlights</a>
           <a class="mobile-link" href="#contact">Contact</a>
         </div>
       </div>
@@ -99,41 +135,67 @@
       <section
         class="mx-auto flex min-h-screen max-w-6xl items-center px-5 pb-16 pt-28 sm:px-8"
       >
-        <div class="max-w-4xl">
-          <p
-            class="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-accent"
-          >
-            Robotics Research Engineer
-          </p>
-          <h1
-            class="text-5xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
-          >
-            Rodrigo Coimbra
-          </h1>
-          <p
-            class="mt-7 max-w-3xl text-xl font-medium leading-relaxed text-slate-700 sm:text-2xl"
-          >
-            I build autonomous navigation, manipulation, and motion-planning
-            systems for mobile and humanoid robots.
-          </p>
-          <p
-            class="mt-3 max-w-3xl text-base leading-relaxed text-muted sm:text-lg"
-          >
-            Research Engineer at Instituto Superior Técnico's Institute for
-            Systems and Robotics (ISR), working from robotics research to
-            practical, reliable autonomy for domestic environments.
-          </p>
-          <div class="mt-9 flex flex-wrap gap-4">
-            <a
-              href="#contact"
-              class="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-dark focus:outline-none focus:ring-4 focus:ring-blue-200"
-              >Get in Touch</a
+        <div
+          class="grid w-full items-center gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:gap-16"
+        >
+          <div class="order-2 lg:order-1">
+            <p
+              class="mb-5 text-sm font-semibold uppercase tracking-[0.18em] text-accent"
             >
-            <a
-              href="#projects"
-              class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200"
-              >View Projects</a
+              Robotics Research Engineer
+            </p>
+            <h1
+              class="text-5xl font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl"
             >
+              Rodrigo Coimbra
+            </h1>
+            <p
+              class="mt-7 max-w-3xl text-xl font-medium leading-relaxed text-slate-700 sm:text-2xl"
+            >
+              I build autonomous navigation, manipulation, and motion-planning
+              systems for mobile and humanoid robots.
+            </p>
+            <p
+              class="mt-3 max-w-3xl text-base leading-relaxed text-muted sm:text-lg"
+            >
+              Research Engineer at Instituto Superior Técnico's Institute for
+              Systems and Robotics (ISR), working from robotics research to
+              practical, reliable autonomy for domestic environments.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                class="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-dark focus:outline-none focus:ring-4 focus:ring-blue-200"
+              >
+                Get in Touch
+              </a>
+              <a
+                href="#projects"
+                class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200"
+              >
+                View Projects
+              </a>
+            </div>
+          </div>
+
+          <div class="order-1 mx-auto w-full max-w-sm lg:order-2 lg:max-w-none">
+            <div class="relative">
+              <div
+                class="absolute -bottom-4 -right-4 h-full w-full rounded-2xl bg-blue-100 sm:-bottom-5 sm:-right-5"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="hero-image relative overflow-hidden rounded-2xl border border-slate-200 shadow-image"
+              >
+                <img
+                  src="assets/images/rodrigo-coimbra.jpeg"
+                  alt="Rodrigo Coimbra, Robotics Research Engineer"
+                  class="aspect-[4/5] w-full object-cover"
+                  width="800"
+                  height="1000"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -184,6 +246,7 @@
             Work and research history
           </h2>
         </div>
+
         <div class="mt-12 border-l border-slate-300 pl-7 sm:pl-10">
           <article class="relative pb-12">
             <span
@@ -216,6 +279,7 @@
               </li>
             </ul>
           </article>
+
           <article class="relative">
             <span
               class="timeline-dot absolute -left-[33px] top-1 h-3 w-3 rounded-full bg-accent sm:-left-[45px]"
@@ -264,7 +328,7 @@
               </p>
             </div>
             <div class="rounded-xl border border-slate-700 bg-slate-800/70 p-6">
-              <h3 class="font-bold text-white">AI & Research</h3>
+              <h3 class="font-bold text-white">AI &amp; Research</h3>
               <p class="mt-3 leading-7 text-slate-300">
                 Reinforcement learning, full-body planning, experimental
                 validation
@@ -291,95 +355,253 @@
         id="projects"
         class="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28"
       >
-        <p
-          class="text-sm font-semibold uppercase tracking-[0.16em] text-accent"
-        >
-          Projects & research
-        </p>
-        <h2
-          class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
-        >
-          Robotics research with real-world demonstrations.
-        </h2>
+        <div class="max-w-3xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.16em] text-accent"
+          >
+            Projects &amp; research
+          </p>
+          <h2
+            class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+          >
+            Robotics research with real-world demonstrations.
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-muted">
+            Selected projects spanning domestic robotics, learning-based
+            planning, and reliable system integration.
+          </p>
+        </div>
+
         <div class="mt-12 grid gap-6 md:grid-cols-2">
           <article
-            class="group rounded-xl border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+            class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
-            <p class="text-sm font-semibold text-accent">2026 — Present</p>
-            <h3 class="mt-3 text-xl font-bold text-slate-950">euROBIN</h3>
-            <p class="mt-4 leading-7 text-muted">
-              Developed a domestic-robotics demonstration shown at the European
-              Parliament, coordinating integration work with partner teams in
-              the European AI-powered robotics network.
-            </p>
-            <a
-              class="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-dark"
-              href="https://www.eurobin-project.eu/"
-              target="_blank"
-              rel="noreferrer"
-              >Visit project →</a
-            >
+            <div class="overflow-hidden bg-slate-100">
+              <img
+                src="assets/images/eurobin-project.jpeg"
+                alt="euROBIN domestic robotics demonstration"
+                class="project-image aspect-[16/9] w-full object-cover"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-7">
+              <p class="text-sm font-semibold text-accent">2026 — Present</p>
+              <h3 class="mt-3 text-xl font-bold text-slate-950">euROBIN</h3>
+              <p class="mt-4 leading-7 text-muted">
+                Developed a domestic-robotics demonstration shown at the
+                European Parliament, coordinating integration work with partner
+                teams in the European AI-powered robotics network.
+              </p>
+              <a
+                class="mt-6 inline-block text-sm font-semibold text-accent transition hover:text-accent-dark"
+                href="https://www.eurobin-project.eu/"
+                target="_blank"
+                rel="noreferrer"
+                >Visit project <span aria-hidden="true">→</span></a
+              >
+            </div>
           </article>
+
           <article
-            class="group rounded-xl border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+            class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
-            <p class="text-sm font-semibold text-accent">2025 — Present</p>
-            <h3 class="mt-3 text-xl font-bold text-slate-950">FOMO-HODOR</h3>
-            <p class="mt-4 leading-7 text-muted">
-              Contributed environment mapping, navigation, and basic
-              manipulation capabilities to research on foundation models for
-              humanoid domestic robots with ISR, INESC-ID, and the University of
-              Texas at Austin.
-            </p>
-            <a
-              class="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-dark"
-              href="https://irsgroup.isr.tecnico.ulisboa.pt/fomo-hodor/"
-              target="_blank"
-              rel="noreferrer"
-              >Visit project →</a
-            >
+            <div class="overflow-hidden bg-slate-100">
+              <img
+                src="assets/images/oracle-project.png"
+                alt="Robot system demonstration developed with cloud-based task and motion planning infrastructure"
+                class="project-image aspect-[16/9] w-full object-cover"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-7">
+              <p class="text-sm font-semibold text-accent">2025 — Present</p>
+              <h3 class="mt-3 text-xl font-bold text-slate-950">FOMO-HODOR</h3>
+              <p class="mt-4 leading-7 text-muted">
+                Contributed environment mapping, navigation, and basic
+                manipulation capabilities to research on foundation models for
+                humanoid domestic robots with ISR, INESC-ID, and the University
+                of Texas at Austin.
+              </p>
+              <a
+                class="mt-6 inline-block text-sm font-semibold text-accent transition hover:text-accent-dark"
+                href="https://irsgroup.isr.tecnico.ulisboa.pt/fomo-hodor/"
+                target="_blank"
+                rel="noreferrer"
+                >Visit project <span aria-hidden="true">→</span></a
+              >
+            </div>
           </article>
+
           <article
-            class="group rounded-xl border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+            class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
-            <p class="text-sm font-semibold text-accent">2024 — Present</p>
-            <h3 class="mt-3 text-xl font-bold text-slate-950">SocRob@Home</h3>
-            <p class="mt-4 leading-7 text-muted">
-              Work on domestic service robotics, with primary responsibility for
-              humanoid-robot navigation and contributions to a mobile
-              manipulator's manipulation pipeline.
-            </p>
-            <a
-              class="mt-6 inline-block text-sm font-semibold text-accent hover:text-accent-dark"
-              href="https://irs-group.github.io/socrobwebsite/"
-              target="_blank"
-              rel="noreferrer"
-              >Visit project →</a
-            >
+            <div class="overflow-hidden bg-slate-100">
+              <img
+                src="assets/images/robocup_photo.jpg"
+                alt="SocRob team and robot at RoboCup@Home"
+                class="project-image aspect-[16/9] w-full object-cover"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-7">
+              <p class="text-sm font-semibold text-accent">2024 — Present</p>
+              <h3 class="mt-3 text-xl font-bold text-slate-950">SocRob@Home</h3>
+              <p class="mt-4 leading-7 text-muted">
+                Work on domestic service robotics, with primary responsibility
+                for humanoid-robot navigation and contributions to a mobile
+                manipulator's manipulation pipeline.
+              </p>
+              <a
+                class="mt-6 inline-block text-sm font-semibold text-accent transition hover:text-accent-dark"
+                href="https://irs-group.github.io/socrobwebsite/"
+                target="_blank"
+                rel="noreferrer"
+                >Visit project <span aria-hidden="true">→</span></a
+              >
+            </div>
           </article>
+
           <article
-            class="group rounded-xl border border-line bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
+            class="project-card overflow-hidden rounded-xl border border-line bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-soft"
           >
-            <p class="text-sm font-semibold text-accent">
-              Publication · ICARSC 2026
-            </p>
-            <h3 class="mt-3 text-xl font-bold text-slate-950">
-              Full-Body Local Planning with Reinforcement Learning
-            </h3>
-            <p class="mt-4 leading-7 text-muted">
-              Co-authored and presented research on full-body local planning of
-              a mobile manipulator using reinforcement learning at the 2026 IEEE
-              International Conference on Autonomous Robot Systems and
-              Competitions.
-            </p>
-            <p class="mt-6 text-sm font-medium text-slate-500">
-              IEEE · Reinforcement Learning · Mobile Manipulation
-            </p>
+            <div class="overflow-hidden bg-slate-100">
+              <img
+                src="assets/images/icarsc_presentation.jpg"
+                alt="Rodrigo Coimbra presenting research at ICARSC 2026"
+                class="project-image aspect-[16/9] w-full object-cover"
+                width="1600"
+                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-7">
+              <p class="text-sm font-semibold text-accent">
+                Publication · ICARSC 2026
+              </p>
+              <h3 class="mt-3 text-xl font-bold text-slate-950">
+                Full-Body Local Planning with Reinforcement Learning
+              </h3>
+              <p class="mt-4 leading-7 text-muted">
+                Co-authored and presented research on full-body local planning
+                of a mobile manipulator using reinforcement learning at the 2026
+                IEEE International Conference on Autonomous Robot Systems and
+                Competitions.
+              </p>
+              <p class="mt-6 text-sm font-medium text-slate-500">
+                IEEE · Reinforcement Learning · Mobile Manipulation
+              </p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="education" class="border-y border-line bg-white">
+      <section id="highlights" class="border-y border-line bg-white">
+        <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
+          <div class="grid items-end gap-6 md:grid-cols-[1fr_auto]">
+            <div class="max-w-2xl">
+              <p
+                class="text-sm font-semibold uppercase tracking-[0.16em] text-accent"
+              >
+                Highlights
+              </p>
+              <h2
+                class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl"
+              >
+                Robotics beyond the lab.
+              </h2>
+              <p class="mt-5 text-lg leading-8 text-muted">
+                Research communication, international collaboration, and live
+                robot demonstrations.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              class="hidden text-sm font-semibold text-accent transition hover:text-accent-dark md:inline-block"
+              >Work together <span aria-hidden="true">→</span></a
+            >
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-12">
+            <figure
+              class="overflow-hidden rounded-xl border border-line bg-slate-50 md:col-span-7"
+            >
+              <img
+                src="assets/images/eurobin-project.jpeg"
+                alt="Robotics demonstration at a euROBIN event"
+                class="aspect-[16/10] w-full object-cover"
+                width="1600"
+                height="1000"
+                loading="lazy"
+              />
+              <figcaption class="p-6">
+                <p class="text-sm font-semibold text-accent">
+                  European Parliament · Brussels
+                </p>
+                <h3 class="mt-2 text-xl font-bold text-slate-950">
+                  euROBIN demonstration
+                </h3>
+                <p class="mt-2 leading-7 text-muted">
+                  A collaborative domestic-robotics demonstration bringing
+                  together research teams from the European AI-powered robotics
+                  network.
+                </p>
+              </figcaption>
+            </figure>
+
+            <div class="grid gap-6 md:col-span-5">
+              <figure
+                class="overflow-hidden rounded-xl border border-line bg-slate-50"
+              >
+                <img
+                  src="assets/images/jeec.jpeg"
+                  alt="Rodrigo Coimbra presenting robotics work at a student outreach event"
+                  class="aspect-[16/9] w-full object-cover"
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
+                <figcaption class="p-5">
+                  <p class="text-sm font-semibold text-accent">
+                    Science outreach
+                  </p>
+                  <h3 class="mt-1 text-lg font-bold text-slate-950">
+                    Sharing robotics research
+                  </h3>
+                </figcaption>
+              </figure>
+
+              <figure
+                class="overflow-hidden rounded-xl border border-line bg-slate-50"
+              >
+                <img
+                  src="assets/images/icarsc_presentation.jpg"
+                  alt="Rodrigo Coimbra delivering a technical presentation at ICARSC 2026"
+                  class="aspect-[16/9] w-full object-cover"
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
+                <figcaption class="p-5">
+                  <p class="text-sm font-semibold text-accent">
+                    ICARSC 2026 · Barcelos
+                  </p>
+                  <h3 class="mt-1 text-lg font-bold text-slate-950">
+                    Presenting learning-based planning research
+                  </h3>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="border-b border-line bg-slate-50">
         <div class="mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
           <p
             class="text-sm font-semibold uppercase tracking-[0.16em] text-accent"
@@ -390,7 +612,7 @@
             <article>
               <p class="text-sm font-medium text-slate-500">2023 — 2025</p>
               <h2 class="mt-2 text-xl font-bold text-slate-950">
-                M.Sc. Electrical & Computer Engineering
+                M.Sc. Electrical &amp; Computer Engineering
               </h2>
               <p class="mt-2 font-medium text-accent">
                 Instituto Superior Técnico
@@ -405,7 +627,7 @@
             <article>
               <p class="text-sm font-medium text-slate-500">2020 — 2023</p>
               <h2 class="mt-2 text-xl font-bold text-slate-950">
-                B.Sc. Electrical & Computer Engineering
+                B.Sc. Electrical &amp; Computer Engineering
               </h2>
               <p class="mt-2 font-medium text-accent">
                 Instituto Superior Técnico
@@ -456,6 +678,13 @@
                 class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
                 >GitHub</a
               >
+              <a
+                href="assets/documents/Curriculum_Vitae.pdf"
+                target="_blank"
+                rel="noreferrer"
+                class="rounded-lg border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+                >Download CV</a
+              >
             </div>
           </div>
         </div>
@@ -471,17 +700,19 @@
     <script>
       const menuButton = document.getElementById("menu-button");
       const mobileMenu = document.getElementById("mobile-menu");
+
       menuButton.addEventListener("click", () => {
         const isOpen = !mobileMenu.classList.contains("hidden");
         mobileMenu.classList.toggle("hidden");
         menuButton.setAttribute("aria-expanded", String(!isOpen));
       });
-      document.querySelectorAll(".mobile-link").forEach((link) =>
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
           menuButton.setAttribute("aria-expanded", "false");
-        }),
-      );
+        });
+      });
     </script>
   </body>
 </html>
