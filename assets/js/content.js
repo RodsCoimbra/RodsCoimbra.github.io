@@ -346,7 +346,7 @@ const portfolioDetails = {
         type: "image",
         src: "assets/images/nos_hackathon_original.webp",
         alt: "Team at the NOS hackathon",
-        caption: "NOS Hackathon 2024 certificate.",
+        caption: "Team at the NOS hackathon.",
       },
       {
         type: "image",
