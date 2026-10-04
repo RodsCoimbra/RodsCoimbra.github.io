@@ -1,12 +1,10 @@
-/* Expanded card content. Add/remove any number of media items.
-   Supported entries INSIDE a media array (separate entries with commas):
-   { type: "image", src: "assets/images/photo.jpg", alt: "Describe the image", caption: "Caption" }
-   { type: "video", src: "assets/videos/demo.mp4", poster: "assets/images/poster.jpg", caption: "Demo", tracks: [{ src: "assets/videos/demo-en.vtt", srclang: "en", label: "English", default: true }] }
-   { type: "youtube", id: "YOUR_VIDEO_ID", caption: "Demo" }
-   The local video poster and captions tracks are optional.
-   Use a real 11-character YouTube ID. No example videos are enabled by default.
-   All paths are relative to index.html, not to this JavaScript file.
-   Visible card covers and summaries are edited in index.html.
+/* Expanded card descriptions and galleries. Paths are relative to index.html.
+   Media: image, video, document (PDF first-page image), youtube.
+   PDF.js renders document page 1 automatically, only when selected.
+   Optional preview: "assets/images/certificate.png" uses a pre-converted
+   image instead, without loading PDF.js. The original PDF stays linked in its caption.
+   Optional video.poster and video.tracks are supported. No autoplay.
+   Static card covers and summaries are edited separately in index.html.
 */
 const portfolioDetails = {
   eurobin: {
@@ -18,46 +16,24 @@ const portfolioDetails = {
       "Within euROBIN, I developed a domestic-robotics demonstration shown at the European Parliament in Brussels.",
       "I coordinated integration work with partner research teams, bringing components of their research together on our robot for a shared demonstration.",
     ],
-    // {
-    //   type: "video",
-    //   src: "assets/videos/eurobin_demo.mp4",
-    //   poster: "assets/images/eurobin_demo.jpg",
-    //   caption: "Domestic-robotics demonstration.",
-    // },
-    // {
-    //   type: "image",
-    //   src: "assets/images/eurobin-project.jpeg",
-    //   alt: "euROBIN domestic-robotics demonstration",
-    //   caption: "Domestic-robotics demonstration.",
-    // },
-    // {
-    //   "type": "youtube",
-    //   "id": "IQKxkcPtKPo",
-    //   "caption": "Domestic-robotics demonstration."
-    // }
     media: [
-      // {
-      //   type: "youtube",
-      //   id: "IQKxkcPtKPo",
-      //   caption: "Demonstration of the euROBIN task",
-      // },
       {
         type: "video",
         src: "assets/videos/eurobin_demo.mp4",
-        poster: "assets/images/eurobin_demo.jpg",
         caption: "Demonstration of the euROBIN task.",
+        poster: "assets/images/eurobin_demo.jpg",
       },
       {
         type: "image",
         src: "assets/images/eurobin-project.jpeg",
         alt: "euROBIN domestic-robotics demonstration",
-        caption: "Domestic-robotics demonstration.",
+        caption: "euROBIN domestic-robotics demonstration",
       },
       {
         type: "image",
         src: "assets/images/eurobin_demo_parliament.gif",
         alt: "Research teams at the European Parliament demonstration",
-        caption: "Parliament Demonstration.",
+        caption: "European Parliament demonstration.",
       },
       {
         type: "image",
@@ -70,41 +46,62 @@ const portfolioDetails = {
       href: "https://www.eurobin-project.eu/",
       label: "Visit project",
     },
-    cover: "eurobin-project.jpeg",
-    placeholder: null,
+    cover: "assets/images/eurobin-project.jpeg",
   },
   fomo: {
     title: "FOMO-HODOR",
     meta: "2025 — Present",
     summary:
-      "Mapping, navigation, and basic manipulation for foundation-model research on humanoid domestic robots.",
+      "Mapping, autonomous navigation, obstacle avoidance, and basic manipulation for humanoid domestic robots.",
     paragraphs: [
       "FOMO-HODOR brings together ISR, INESC-ID, and the University of Texas at Austin to explore foundation models for humanoid domestic robots.",
       "I contributed environment mapping, navigation, and basic manipulation capabilities, collaborating with researchers on the core robot capabilities needed for the project.",
+      "For LOLA, my autonomous-navigation work included mapping with RTAB-Map, autonomous navigation, and obstacle avoidance. The gallery contains demonstrations of these capabilities within FOMO-HODOR.",
     ],
     media: [
+      {
+        type: "video",
+        src: "assets/videos/autonomous_navigation_lola.mp4",
+        caption: "LOLA autonomous navigation · FOMO-HODOR.",
+      },
+      {
+        type: "video",
+        src: "assets/videos/lola_navigation_obstacle_avoidance.mp4",
+        caption: "LOLA navigation and obstacle avoidance · FOMO-HODOR.",
+      },
+      {
+        type: "video",
+        src: "assets/videos/rtabmap.mp4",
+        caption: "RTAB-Map mapping demonstration for LOLA · FOMO-HODOR.",
+      },
       {
         type: "image",
         src: "assets/images/oracle_project.jpg",
         alt: "FOMO-HODOR research project",
-        caption: "FOMO-HODOR research project.",
+        caption: "FOMO-HODOR research project",
+      },
+      {
+        type: "image",
+        src: "assets/images/LOLA.jpeg",
+        alt: "LOLA robot",
+        caption: "LOLA, the robot used for the navigation work.",
       },
     ],
     link: {
       href: "https://irsgroup.isr.tecnico.ulisboa.pt/fomo-hodor/",
       label: "Visit project",
     },
-    cover: "oracle_project.jpg",
-    placeholder: null,
+    cover: "assets/images/LOLA.jpeg",
   },
   socrob: {
     title: "SocRob@Home",
     meta: "2024 — Present",
     summary:
-      "Humanoid navigation and mobile-manipulator software for domestic service robotics.",
+      "Humanoid navigation and mobile-manipulator software for domestic service robotics and RoboCup@Home.",
     paragraphs: [
       "As part of SocRob@Home, my primary responsibility has been developing autonomous navigation for the team’s humanoid robot.",
       "I also contribute to the mobile manipulator’s manipulation pipeline. The project connects domestic-robotics research with practical demonstrations and international competitions, including RoboCup@Home.",
+      "The gallery brings together RoboCup team photographs, hands-on competition work, the Portugal podium photograph, and certificates from the Korea and Portugal events.",
     ],
     media: [
       {
@@ -113,13 +110,36 @@ const portfolioDetails = {
         alt: "SocRob team at RoboCup@Home",
         caption: "SocRob@Home at RoboCup.",
       },
+      {
+        type: "image",
+        src: "assets/images/robocup_portugal_working.jpg",
+        alt: "Working with the SocRob team at RoboCup Portugal",
+        caption: "Hands-on robotics work at RoboCup Portugal.",
+      },
+      {
+        type: "image",
+        src: "assets/images/podium_robocup_portugal.jpg",
+        alt: "RoboCup Portugal podium photograph",
+        caption: "RoboCup Portugal podium photograph.",
+      },
+      {
+        type: "document",
+        src: "assets/images/certificate_robocup_korea.pdf",
+        label: "RoboCup Korea certificate",
+        caption: "RoboCup Korea certificate",
+      },
+      {
+        type: "document",
+        src: "assets/images/certificate_robocup_portugal.pdf",
+        label: "RoboCup Portugal certificate",
+        caption: "RoboCup Portugal certificate",
+      },
     ],
     link: {
       href: "https://irs-group.github.io/socrobwebsite/",
       label: "Visit project",
     },
-    cover: "robocup_photo.jpg",
-    placeholder: null,
+    cover: "assets/images/robocup_photo.jpg",
   },
   paper: {
     title: "Full-Body Local Planning with Reinforcement Learning",
@@ -137,13 +157,43 @@ const portfolioDetails = {
         alt: "Rodrigo Coimbra presenting at ICARSC 2026",
         caption: "Research presentation at ICARSC 2026, Barcelos.",
       },
+      {
+        type: "document",
+        src: "assets/images/ICARSC_Certificate.pdf",
+        label: "ICARSC certificate",
+        caption: "ICARSC certificate",
+      },
     ],
     link: {
       href: "https://ieeexplore.ieee.org/document/11523319",
       label: "View paper",
     },
-    cover: "icarsc_presentation.jpg",
-    placeholder: null,
+    cover: "assets/images/icarsc_presentation.jpg",
+  },
+  quidgest: {
+    title: "Software Developer Internship",
+    meta: "Quidgest · Jul 2024 — Sep 2024",
+    summary:
+      "REST API development and financial-management data processing using C# and Microsoft SQL Server.",
+    paragraphs: [
+      "During my internship at Quidgest, I developed a REST API providing asynchronous access to financial-management database data.",
+      "I implemented data-processing functionality in C# and wrote SQL queries and updates for Microsoft SQL Server. The gallery includes an internship photograph and certificate.",
+    ],
+    media: [
+      {
+        type: "image",
+        src: "assets/images/quidgest.jpg",
+        alt: "Quidgest internship",
+        caption: "Software development internship at Quidgest.",
+      },
+      {
+        type: "document",
+        src: "assets/images/certificate_intership_quidgest.pdf",
+        label: "Quidgest internship certificate",
+        caption: "Quidgest internship certificate",
+      },
+    ],
+    cover: "assets/images/quidgest.jpg",
   },
   parliament: {
     title: "euROBIN demonstration",
@@ -168,9 +218,7 @@ const portfolioDetails = {
         caption: "Domestic-robotics demonstration.",
       },
     ],
-    link: null,
-    cover: "eurobin-all-teams.jpeg",
-    placeholder: null,
+    cover: "assets/images/eurobin-all-teams.jpeg",
   },
   outreach: {
     title: "Sharing robotics research",
@@ -189,9 +237,7 @@ const portfolioDetails = {
         caption: "Sharing robotics research at JEEC.",
       },
     ],
-    link: null,
-    cover: "jeec.jpg",
-    placeholder: null,
+    cover: "assets/images/jeec.jpg",
   },
   presentation: {
     title: "Presenting learning-based planning research",
@@ -209,13 +255,18 @@ const portfolioDetails = {
         alt: "Rodrigo Coimbra delivering his ICARSC presentation",
         caption: "ICARSC 2026 research presentation.",
       },
+      {
+        type: "document",
+        src: "assets/images/ICARSC_Certificate.pdf",
+        label: "ICARSC certificate",
+        caption: "ICARSC certificate",
+      },
     ],
     link: {
       href: "https://ieeexplore.ieee.org/document/11523319",
       label: "View paper",
     },
-    cover: "icarsc_presentation.jpg",
-    placeholder: null,
+    cover: "assets/images/icarsc_presentation.jpg",
   },
   hiking: {
     title: "Hiking & running",
@@ -246,9 +297,7 @@ const portfolioDetails = {
         caption: "Hiking with Grupo Desportivo do Santander.",
       },
     ],
-    link: null,
-    cover: "santander_running.jpg",
-    placeholder: null,
+    cover: "assets/images/santander_running.jpg",
   },
   volleyball: {
     title: "Volleyball",
@@ -279,8 +328,33 @@ const portfolioDetails = {
         caption: "Volleyball competition photo.",
       },
     ],
-    link: null,
-    cover: "volleyball_team_back.jpg",
-    placeholder: null,
+    cover: "assets/images/volleyball_team_back.jpg",
+  },
+  hackathons: {
+    title: "NOS Hackathons",
+    meta: "2024 & 2025 · Afternoon activities",
+    summary:
+      "Two afternoon hackathons with friends: privacy-focused prompt engineering and generative AI document processing.",
+    paragraphs: [
+      "After discovering the NOS hackathons, I invited a group of friends to participate together. Each event was a one-afternoon side activity, separate from my robotics research.",
+      "In 2024, we tackled prompt-engineering tests aimed at preventing an AI system from revealing private information.",
+      "In 2025, we built a generative AI document-processing tool that extracts structured information and validates model outputs against source data to detect hallucinations.",
+      "The 2025 tool combined Python-based text processing with an interactive drag-and-drop interface for document input, data extraction, and structured output generation.",
+    ],
+    media: [
+      {
+        type: "image",
+        src: "assets/images/certificate_nos_hackaton_2024.png",
+        alt: "Certificate from the 2024 NOS hackathon",
+        caption: "NOS Hackathon 2024 certificate.",
+      },
+      {
+        type: "document",
+        src: "assets/images/certificate_nos_hackaton_2025.pdf",
+        label: "NOS Hackathon 2025 certificate",
+        caption: "NOS Hackathon 2025 certificate",
+      },
+    ],
+    coverKind: "hackathon",
   },
 };

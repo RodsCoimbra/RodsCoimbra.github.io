@@ -10,9 +10,10 @@
     <meta name="color-scheme" content="light dark" />
     <title>Rodrigo Coimbra | Robotics Research Engineer</title>
     <script src="assets/js/theme.js?v=2"></script>
-    <link rel="stylesheet" href="assets/css/styles.css?v=3" />
-    <script src="assets/js/content.js?v=2" defer></script>
-    <script src="assets/js/app.js?v=2" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css?v=6" />
+    <script src="assets/js/content.js?v=5" defer></script>
+    <script src="assets/js/pdf-cache.js?v=6" defer></script>
+    <script src="assets/js/app.js?v=6" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -67,9 +68,8 @@
               <circle cx="12" cy="12" r="4" />
               <path
                 d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"
-              />
-            </svg>
-            <svg
+              /></svg
+            ><svg
               id="moon-icon"
               viewBox="0 0 24 24"
               fill="none"
@@ -142,7 +142,7 @@
       <section id="about" class="section surface-section">
         <div class="container about-grid">
           <p class="eyebrow">About me</p>
-          <div>
+          <div class="about-content">
             <h2 class="section-title">
               Practical autonomy for robots that work beyond the lab.
             </h2>
@@ -162,53 +162,62 @@
         <div class="container">
           <p class="eyebrow">Experience</p>
           <h2 class="section-title">Work and research history</h2>
-          <div class="timeline">
-            <article>
-              <div class="role-header">
-                <h3>Research Engineer</h3>
-                <p class="role-date">2025 — Present</p>
-              </div>
-              <p class="role-company">
-                Institute for Systems and Robotics (ISR) · Instituto Superior
-                Técnico
-              </p>
-              <ul>
-                <li>
-                  Develop autonomous navigation capabilities for a humanoid
-                  robot within the SocRob@Home research project.
-                </li>
-                <li>
-                  Contribute to the manipulation pipeline of a mobile
-                  manipulator for domestic robotics tasks.
-                </li>
-                <li>
-                  Collaborate across international research projects spanning
-                  task and motion planning, and AI-powered robotics
-                  demonstrations.
-                </li>
-              </ul>
-            </article>
-            <article>
-              <div class="role-header">
-                <h3>Software Developer Intern</h3>
-                <p class="role-date">Jul 2024 — Sep 2024</p>
-              </div>
-              <p class="role-company">Quidgest</p>
-              <ul>
-                <li>
-                  Developed a REST API providing asynchronous access to
-                  financial-management database data.
-                </li>
-                <li>
-                  Implemented data-processing functionality in C# and wrote SQL
-                  queries and updates for Microsoft SQL Server.
-                </li>
-              </ul>
-            </article>
+          <div class="cards experience-grid">
+            <button
+              type="button"
+              class="detail-card experience-card"
+              data-detail="socrob"
+              aria-haspopup="dialog"
+              aria-controls="detail-dialog"
+            >
+              <span class="card-body"
+                ><span class="role-header"
+                  ><span class="role-title">Research Engineer</span
+                  ><span class="role-date">2025 — Present</span></span
+                ><span class="role-company"
+                  >Institute for Systems and Robotics (ISR) · Instituto Superior
+                  Técnico</span
+                ><span class="experience-points"
+                  ><span
+                    >Develop autonomous navigation capabilities for a humanoid
+                    robot within the SocRob@Home research project.</span
+                  ><span
+                    >Contribute to the manipulation pipeline of a mobile
+                    manipulator for domestic robotics tasks.</span
+                  ><span
+                    >Collaborate across international research projects spanning
+                    task and motion planning, and AI-powered robotics
+                    demonstrations.</span
+                  ></span
+                ></span
+              >
+            </button>
+            <button
+              type="button"
+              class="detail-card experience-card"
+              data-detail="quidgest"
+              aria-haspopup="dialog"
+              aria-controls="detail-dialog"
+            >
+              <span class="card-body"
+                ><span class="role-header"
+                  ><span class="role-title">Software Developer Intern</span
+                  ><span class="role-date">Jul 2024 — Sep 2024</span></span
+                ><span class="role-company">Quidgest</span
+                ><span class="experience-points"
+                  ><span
+                    >Developed a REST API providing asynchronous access to
+                    financial-management database data.</span
+                  ><span
+                    >Implemented data-processing functionality in C# and wrote
+                    SQL queries and updates for Microsoft SQL Server.</span
+                  ></span
+                ></span
+              >
+            </button>
           </div>
         </div>
       </section>
-      <!-- Skills intentionally remain static and fully visible. -->
       <section id="skills" class="section skills-section">
         <div class="container">
           <p class="eyebrow">Skills</p>
@@ -218,7 +227,7 @@
               <h3>Robotics</h3>
               <p>
                 ROS, ROS 2, navigation, motion planning, manipulation, mobile
-                robots, humanoids, Isaac Sim/Lab
+                robots, humanoids, RTAB-Map, Isaac Sim/Lab
               </p>
             </div>
             <div class="skill-card">
@@ -256,7 +265,7 @@
             planning, and robot software integration. Open a card to explore the
             work and its available media.
           </p>
-          <div class="cards two-columns">
+          <div class="cards project-grid">
             <button
               type="button"
               class="detail-card"
@@ -264,15 +273,13 @@
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/eurobin-project.jpeg"
-                  alt="euROBIN domestic-robotics demonstration"
+                  alt="euROBIN"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">2026 — Present</span
                 ><span class="card-title">euROBIN</span
                 ><span class="card-summary"
@@ -281,76 +288,67 @@
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="fomo"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover illustration">
-                <img
-                  src="assets/images/oracle_project.jpg"
-                  alt="FOMO-HODOR research project"
+              <span class="card-cover"
+                ><img
+                  src="assets/images/LOLA.jpeg"
+                  alt="FOMO-HODOR"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">2025 — Present</span
                 ><span class="card-title">FOMO-HODOR</span
                 ><span class="card-summary"
-                  >Mapping, navigation, and basic manipulation for
-                  foundation-model research on humanoid domestic robots.</span
+                  >Mapping, autonomous navigation, obstacle avoidance, and basic
+                  manipulation for humanoid domestic robots.</span
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="socrob"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/robocup_photo.jpg"
-                  alt="SocRob team at RoboCup@Home"
+                  alt="SocRob@Home"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">2024 — Present</span
                 ><span class="card-title">SocRob@Home</span
                 ><span class="card-summary"
                   >Humanoid navigation and mobile-manipulator software for
-                  domestic service robotics.</span
+                  domestic service robotics and RoboCup@Home.</span
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="paper"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/icarsc_presentation.jpg"
-                  alt="Rodrigo Coimbra presenting at ICARSC 2026"
+                  alt="Full-Body Local Planning with Reinforcement Learning"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">Publication · ICARSC 2026</span
                 ><span class="card-title"
                   >Full-Body Local Planning with Reinforcement Learning</span
@@ -368,12 +366,14 @@
       <section id="highlights" class="section surface-section">
         <div class="container">
           <p class="eyebrow">Highlights</p>
-          <h2 class="section-title">Robotics beyond the lab.</h2>
+          <h2 class="section-title">
+            Research, outreach, and shared challenges.
+          </h2>
           <p class="section-intro">
-            Research communication, international collaboration, and live robot
-            demonstrations.
+            Research communication, international collaboration, live robot
+            demonstrations, and occasional AI hackathons with friends.
           </p>
-          <div class="cards three-columns">
+          <div class="cards highlights-grid">
             <button
               type="button"
               class="detail-card"
@@ -381,15 +381,13 @@
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/eurobin-all-teams.jpeg"
-                  alt="Research teams at the European Parliament demonstration"
+                  alt="euROBIN demonstration"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">European Parliament · Brussels</span
                 ><span class="card-title">euROBIN demonstration</span
                 ><span class="card-summary"
@@ -398,24 +396,21 @@
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="outreach"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/jeec.jpg"
-                  alt="Robotics outreach at JEEC"
+                  alt="Sharing robotics research"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">Science outreach · JEEC</span
                 ><span class="card-title">Sharing robotics research</span
                 ><span class="card-summary"
@@ -424,30 +419,61 @@
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="presentation"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/icarsc_presentation.jpg"
-                  alt="Rodrigo Coimbra delivering his ICARSC presentation"
+                  alt="Presenting learning-based planning research"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">ICARSC 2026 · Barcelos</span
                 ><span class="card-title"
                   >Presenting learning-based planning research</span
                 ><span class="card-summary"
                   >Communicating my full-body local planning research to the
                   robotics community.</span
+                ><span class="card-action"
+                  >Explore details <span aria-hidden="true">↗</span></span
+                ></span
+              ></button
+            ><button
+              type="button"
+              class="detail-card"
+              data-detail="hackathons"
+              aria-haspopup="dialog"
+              aria-controls="detail-dialog"
+            >
+              <span class="card-cover ai-cover"
+                ><svg
+                  viewBox="0 0 80 80"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 10h24l12 12v48H22zM46 10v14h12M30 35h20M30 44h13M30 53h9"
+                  />
+                  <path d="m48 54 5 5 10-13" /></svg
+                ><span>NOS Hackathons</span
+                ><span class="cover-label"
+                  >Afternoon challenges with friends</span
+                ></span
+              ><span class="card-body"
+                ><span class="eyebrow"
+                  >2024 &amp; 2025 · Afternoon activities</span
+                ><span class="card-title">NOS Hackathons</span
+                ><span class="card-summary"
+                  >Two afternoon hackathons with friends: privacy-focused prompt
+                  engineering and generative AI document processing.</span
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
@@ -471,6 +497,33 @@
                 planning and control of a mobile manipulator using reinforcement
                 learning. Academic Merit Certificate in both years.
               </p>
+              <h4 class="document-heading">Academic merit certificates</h4>
+              <div class="document-list">
+                <a
+                  class="document-link"
+                  href="assets/Declarações/merito_academico_mestrados_23_24.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">↗</span
+                  ><span
+                    >Academic merit · 2023–2024<span class="document-format"
+                      >PDF · Opens in a new tab</span
+                    ></span
+                  ></a
+                >
+                <a
+                  class="document-link"
+                  href="assets/Declarações/merito_academico_mestrados_24_25.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">↗</span
+                  ><span
+                    >Academic merit · 2024–2025<span class="document-format"
+                      >PDF · Opens in a new tab</span
+                    ></span
+                  ></a
+                >
+              </div>
             </article>
             <article>
               <p class="role-date">2020 — 2023</p>
@@ -480,6 +533,45 @@
                 Final grade: 16/20. Academic Merit Certificate received in all
                 three years.
               </p>
+              <h4 class="document-heading">Academic merit certificates</h4>
+              <div class="document-list">
+                <a
+                  class="document-link"
+                  href="assets/Declarações/merito_academico_licenciatura_20_21.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">↗</span
+                  ><span
+                    >Academic merit · 2020–2021<span class="document-format"
+                      >PDF · Opens in a new tab</span
+                    ></span
+                  ></a
+                >
+                <a
+                  class="document-link"
+                  href="assets/Declarações/merito_academico_licenciatura_21_22.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">↗</span
+                  ><span
+                    >Academic merit · 2021–2022<span class="document-format"
+                      >PDF · Opens in a new tab</span
+                    ></span
+                  ></a
+                >
+                <a
+                  class="document-link"
+                  href="assets/Declarações/merito_academico_licenciatura_22_23.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">↗</span
+                  ><span
+                    >Academic merit · 2022–2023<span class="document-format"
+                      >PDF · Opens in a new tab</span
+                    ></span
+                  ></a
+                >
+              </div>
             </article>
           </div>
         </div>
@@ -492,7 +584,7 @@
             A few interests outside my research and engineering work: hiking,
             running, and team sport.
           </p>
-          <div class="cards two-columns">
+          <div class="cards two-columns activity-grid">
             <button
               type="button"
               class="detail-card"
@@ -500,15 +592,13 @@
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/santander_running.jpg"
-                  alt="Hiking and running with Grupo Desportivo do Santander"
+                  alt="Hiking &amp; running"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">Grupo Desportivo do Santander</span
                 ><span class="card-title">Hiking &amp; running</span
                 ><span class="card-summary"
@@ -517,24 +607,21 @@
                 ><span class="card-action"
                   >Explore details <span aria-hidden="true">↗</span></span
                 ></span
-              >
-            </button>
-            <button
+              ></button
+            ><button
               type="button"
               class="detail-card"
               data-detail="volleyball"
               aria-haspopup="dialog"
               aria-controls="detail-dialog"
             >
-              <div class="card-cover">
-                <img
+              <span class="card-cover"
+                ><img
                   src="assets/images/volleyball_team_back.jpg"
-                  alt="Volleyball team at secondary school"
+                  alt="Volleyball"
                   loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="card-body"
+                  decoding="async" /></span
+              ><span class="card-body"
                 ><span class="eyebrow">Secondary school</span
                 ><span class="card-title">Volleyball</span
                 ><span class="card-summary"
@@ -583,14 +670,14 @@
         </div>
       </section>
       <noscript
-        ><p class="container">
-          Enable JavaScript to open expanded card details, change themes, and
-          use the mobile menu.
+        ><p class="container noscript-note">
+          Enable JavaScript for card details, galleries, themes, and the mobile
+          menu. Academic merit certificate links remain available without
+          JavaScript.
         </p></noscript
       >
     </main>
     <footer class="site-footer">Built with care by Rodrigo Coimbra.</footer>
-    <!-- Media precedes the long description so visitors see the work immediately. -->
     <dialog
       id="detail-dialog"
       class="detail-dialog"
@@ -633,7 +720,7 @@
               id="previous-media"
               class="gallery-arrow"
               type="button"
-              aria-label="Previous image or video"
+              aria-label="Previous gallery item"
             >
               ‹
             </button>
@@ -642,7 +729,7 @@
               id="next-media"
               class="gallery-arrow"
               type="button"
-              aria-label="Next image or video"
+              aria-label="Next gallery item"
             >
               ›
             </button>
@@ -659,16 +746,16 @@
             <div
               id="media-dots"
               class="gallery-dots"
-              aria-label="Choose media item"
+              aria-label="Choose gallery item"
             ></div>
           </div>
           <p id="gallery-help" class="gallery-help">
-            Use arrows or swipe the image or caption. On videos, use the arrows
+            Use arrows or swipe an image or caption. On videos, use the arrows
             or swipe the caption below.
           </p>
         </div>
         <div id="detail-description" class="modal-description"></div>
-        <div class="modal-link" id="detail-links"></div>
+        <div id="detail-links" class="modal-link" hidden></div>
       </div>
     </dialog>
   </body>
