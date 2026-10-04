@@ -1042,3 +1042,16 @@ h4 {
     transform: rotate(0) scale(1);
   }
 }
+
+/* Larger blue labels throughout the website. */
+.eyebrow,
+.card-body .eyebrow,
+#about .eyebrow {
+  font-size: 1.25rem;
+}
+
+.role-company,
+.education-grid .school,
+.card-action {
+  font-size: 1.1rem;
+}

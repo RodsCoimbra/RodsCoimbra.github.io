@@ -84,7 +84,7 @@ const portfolioDetails = {
         type: "image",
         src: "assets/images/LOLA.jpeg",
         alt: "LOLA robot",
-        caption: "LOLA, the robot used for the navigation work.",
+        caption: "LOLA, the robot used for the project.",
       },
     ],
     link: {
@@ -332,16 +332,22 @@ const portfolioDetails = {
   },
   hackathons: {
     title: "NOS Hackathons",
-    meta: "2024 & 2025 · Afternoon activities",
+    meta: "2024 & 2025 · NOS Multimédia SA",
     summary:
-      "Two afternoon hackathons with friends: privacy-focused prompt engineering and generative AI document processing.",
+      "Two hackathons with friends: privacy-focused prompt engineering and generative AI document processing.",
     paragraphs: [
-      "After discovering the NOS hackathons, I invited a group of friends to participate together. Each event was a one-afternoon side activity, separate from my robotics research.",
+      "After discovering the NOS hackathons, I invited a group of friends to participate together. Each event was focused on generative AI and prompt engineering, which are topics I am also passionate about.",
       "In 2024, we tackled prompt-engineering tests aimed at preventing an AI system from revealing private information.",
       "In 2025, we built a generative AI document-processing tool that extracts structured information and validates model outputs against source data to detect hallucinations.",
       "The 2025 tool combined Python-based text processing with an interactive drag-and-drop interface for document input, data extraction, and structured output generation.",
     ],
     media: [
+      {
+        type: "image",
+        src: "assets/images/nos_hackathon_original.jpg",
+        alt: "Team at the NOS hackathon",
+        caption: "NOS Hackathon 2024 certificate.",
+      },
       {
         type: "image",
         src: "assets/images/certificate_nos_hackaton_2024.png",
