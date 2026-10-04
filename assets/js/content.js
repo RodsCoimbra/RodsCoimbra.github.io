@@ -1,7 +1,7 @@
 /* Expanded card descriptions and galleries. Paths are relative to index.html.
    Media: image, video, document (PDF first-page image), youtube.
    PDF.js renders document page 1 automatically, only when selected.
-   Optional preview: "assets/images/certificate.png" uses a pre-converted
+   Optional preview: "assets/images/certificate.webp" uses a pre-converted
    image instead, without loading PDF.js. The original PDF stays linked in its caption.
    Optional video.poster and video.tracks are supported. No autoplay.
    Static card covers and summaries are edited separately in index.html.
@@ -21,11 +21,11 @@ const portfolioDetails = {
         type: "video",
         src: "assets/videos/eurobin_demo.mp4",
         caption: "Demonstration of the euROBIN task.",
-        poster: "assets/images/eurobin_demo.jpg",
+        poster: "assets/images/eurobin_demo.webp",
       },
       {
         type: "image",
-        src: "assets/images/eurobin-project.jpeg",
+        src: "assets/images/eurobin-project.webp",
         alt: "euROBIN domestic-robotics demonstration",
         caption: "euROBIN domestic-robotics demonstration",
       },
@@ -37,7 +37,7 @@ const portfolioDetails = {
       },
       {
         type: "image",
-        src: "assets/images/eurobin-all-teams.jpeg",
+        src: "assets/images/eurobin-all-teams.webp",
         alt: "Research teams at the European Parliament demonstration",
         caption: "Participating research teams, Brussels.",
       },
@@ -46,7 +46,7 @@ const portfolioDetails = {
       href: "https://www.eurobin-project.eu/",
       label: "Visit project",
     },
-    cover: "assets/images/eurobin-project.jpeg",
+    cover: "assets/images/eurobin-project.webp",
   },
   fomo: {
     title: "FOMO-HODOR",
@@ -76,13 +76,13 @@ const portfolioDetails = {
       },
       {
         type: "image",
-        src: "assets/images/oracle_project.jpg",
+        src: "assets/images/oracle_project.webp",
         alt: "FOMO-HODOR research project",
         caption: "FOMO-HODOR research project",
       },
       {
         type: "image",
-        src: "assets/images/LOLA.jpeg",
+        src: "assets/images/LOLA.webp",
         alt: "LOLA robot",
         caption: "LOLA, the robot used for the project.",
       },
@@ -91,7 +91,7 @@ const portfolioDetails = {
       href: "https://irsgroup.isr.tecnico.ulisboa.pt/fomo-hodor/",
       label: "Visit project",
     },
-    cover: "assets/images/LOLA.jpeg",
+    cover: "assets/images/LOLA.webp",
   },
   socrob: {
     title: "SocRob@Home",
@@ -106,19 +106,19 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/robocup_photo.jpg",
+        src: "assets/images/robocup_photo.webp",
         alt: "SocRob team at RoboCup@Home",
         caption: "SocRob@Home at RoboCup.",
       },
       {
         type: "image",
-        src: "assets/images/robocup_portugal_working.jpg",
+        src: "assets/images/robocup_portugal_working.webp",
         alt: "Working with the SocRob team at RoboCup Portugal",
         caption: "Hands-on robotics work at RoboCup Portugal.",
       },
       {
         type: "image",
-        src: "assets/images/podium_robocup_portugal.jpg",
+        src: "assets/images/podium_robocup_portugal.webp",
         alt: "RoboCup Portugal podium photograph",
         caption: "RoboCup Portugal podium photograph.",
       },
@@ -139,7 +139,7 @@ const portfolioDetails = {
       href: "https://irs-group.github.io/socrobwebsite/",
       label: "Visit project",
     },
-    cover: "assets/images/robocup_photo.jpg",
+    cover: "assets/images/robocup_photo.webp",
   },
   paper: {
     title: "Full-Body Local Planning with Reinforcement Learning",
@@ -153,7 +153,7 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/icarsc_presentation.jpg",
+        src: "assets/images/icarsc_presentation.webp",
         alt: "Rodrigo Coimbra presenting at ICARSC 2026",
         caption: "Research presentation at ICARSC 2026, Barcelos.",
       },
@@ -168,7 +168,7 @@ const portfolioDetails = {
       href: "https://ieeexplore.ieee.org/document/11523319",
       label: "View paper",
     },
-    cover: "assets/images/icarsc_presentation.jpg",
+    cover: "assets/images/icarsc_presentation.webp",
   },
   quidgest: {
     title: "Software Developer Internship",
@@ -182,7 +182,7 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/quidgest.jpg",
+        src: "assets/images/quidgest.webp",
         alt: "Quidgest internship",
         caption: "Software development internship at Quidgest.",
       },
@@ -193,7 +193,7 @@ const portfolioDetails = {
         caption: "Quidgest internship certificate",
       },
     ],
-    cover: "assets/images/quidgest.jpg",
+    cover: "assets/images/quidgest.webp",
   },
   parliament: {
     title: "euROBIN demonstration",
@@ -207,18 +207,18 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/eurobin-all-teams.jpeg",
+        src: "assets/images/eurobin-all-teams.webp",
         alt: "Research teams at the European Parliament demonstration",
         caption: "European Parliament demonstration, Brussels.",
       },
       {
         type: "image",
-        src: "assets/images/eurobin-project.jpeg",
+        src: "assets/images/eurobin-project.webp",
         alt: "euROBIN robotics demonstration",
         caption: "Domestic-robotics demonstration.",
       },
     ],
-    cover: "assets/images/eurobin-all-teams.jpeg",
+    cover: "assets/images/eurobin-all-teams.webp",
   },
   outreach: {
     title: "Sharing robotics research",
@@ -232,12 +232,12 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/jeec.jpg",
+        src: "assets/images/jeec.webp",
         alt: "Robotics outreach at JEEC",
         caption: "Sharing robotics research at JEEC.",
       },
     ],
-    cover: "assets/images/jeec.jpg",
+    cover: "assets/images/jeec.webp",
   },
   presentation: {
     title: "Presenting learning-based planning research",
@@ -251,7 +251,7 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/icarsc_presentation.jpg",
+        src: "assets/images/icarsc_presentation.webp",
         alt: "Rodrigo Coimbra delivering his ICARSC presentation",
         caption: "ICARSC 2026 research presentation.",
       },
@@ -266,7 +266,7 @@ const portfolioDetails = {
       href: "https://ieeexplore.ieee.org/document/11523319",
       label: "View paper",
     },
-    cover: "assets/images/icarsc_presentation.jpg",
+    cover: "assets/images/icarsc_presentation.webp",
   },
   hiking: {
     title: "Hiking & running",
@@ -280,24 +280,24 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/santander_running.jpg",
+        src: "assets/images/santander_running.webp",
         alt: "Rodrigo Coimbra running",
         caption: "Running with Grupo Desportivo do Santander.",
       },
       {
         type: "image",
-        src: "assets/images/santander_hiking.jpg",
+        src: "assets/images/santander_hiking.webp",
         alt: "Rodrigo Coimbra hiking",
         caption: "Hiking with Grupo Desportivo do Santander.",
       },
       {
         type: "image",
-        src: "assets/images/santander_hiking_2.jpg",
+        src: "assets/images/santander_hiking_2.webp",
         alt: "Rodrigo Coimbra hiking",
         caption: "Hiking with Grupo Desportivo do Santander.",
       },
     ],
-    cover: "assets/images/santander_running.jpg",
+    cover: "assets/images/santander_running.webp",
   },
   volleyball: {
     title: "Volleyball",
@@ -311,24 +311,24 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/volleyball_team_back.jpg",
+        src: "assets/images/volleyball_team_back.webp",
         alt: "Rodrigo Coimbra playing volleyball",
         caption: "Volleyball team photo.",
       },
       {
         type: "image",
-        src: "assets/images/volleyball_team.png",
+        src: "assets/images/volleyball_team.webp",
         alt: "Rodrigo Coimbra playing volleyball",
         caption: "Volleyball team photo.",
       },
       {
         type: "image",
-        src: "assets/images/volleyball_team_2.png",
+        src: "assets/images/volleyball_team_2.webp",
         alt: "Rodrigo Coimbra playing volleyball",
         caption: "Volleyball competition photo.",
       },
     ],
-    cover: "assets/images/volleyball_team_back.jpg",
+    cover: "assets/images/volleyball_team_back.webp",
   },
   hackathons: {
     title: "NOS Hackathons",
@@ -344,7 +344,7 @@ const portfolioDetails = {
     media: [
       {
         type: "image",
-        src: "assets/images/nos_hackathon_original.jpg",
+        src: "assets/images/nos_hackathon_original.webp",
         alt: "Team at the NOS hackathon",
         caption: "NOS Hackathon 2024 certificate.",
       },
