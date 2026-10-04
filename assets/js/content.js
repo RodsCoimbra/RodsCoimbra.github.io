@@ -31,7 +31,7 @@ const portfolioDetails = {
       },
       {
         type: "image",
-        src: "assets/images/eurobin_demo_parliament.gif",
+        src: "assets/images/eurobin_demo_parliament.webp",
         alt: "Research teams at the European Parliament demonstration",
         caption: "European Parliament demonstration.",
       },
