@@ -10,12 +10,16 @@
   } catch (_) {}
   function updateThemeButton() {
     const dark = root.classList.contains("dark");
+    const button = $("theme-toggle");
     const label = dark ? "Switch to light mode" : "Switch to dark mode";
-    $("theme-toggle").setAttribute("aria-pressed", String(dark));
-    $("theme-toggle").setAttribute("aria-label", label);
-    $("theme-toggle").title = label;
-    $("sun-icon").hidden = !dark;
-    $("moon-icon").hidden = dark;
+
+    button.setAttribute("aria-pressed", String(dark));
+    button.setAttribute("aria-label", label);
+    button.title = label;
+
+    // Dark mode: show sun. Light mode: show moon.
+    $("sun-icon").toggleAttribute("hidden", !dark);
+    $("moon-icon").toggleAttribute("hidden", dark);
   }
   updateThemeButton();
   $("theme-toggle").addEventListener("click", () => {

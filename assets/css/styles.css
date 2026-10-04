@@ -985,3 +985,60 @@ h4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body p,
+  body a,
+  body span,
+  .site-header,
+  .mobile-menu,
+  .surface-section,
+  .skills-section,
+  .skill-card,
+  .card-cover,
+  .education-grid article,
+  .document-link,
+  .button,
+  .icon-button,
+  .gallery-arrow,
+  .detail-dialog,
+  .portrait-frame,
+  .site-footer,
+  .hero-photo::before {
+    transition:
+      background-color 250ms ease,
+      color 250ms ease,
+      border-color 250ms ease;
+  }
+
+  /* Preserve the cards' existing hover animation too. */
+  .detail-card {
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease,
+      background-color 250ms ease,
+      color 250ms ease,
+      border-color 250ms ease;
+  }
+
+  /* Animate the newly visible sun/moon icon. */
+  #theme-toggle svg {
+    animation: theme-icon-in 200ms ease-out;
+  }
+}
+
+@keyframes theme-icon-in {
+  from {
+    opacity: 0;
+    transform: rotate(-15deg) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
