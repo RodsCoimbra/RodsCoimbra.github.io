@@ -1,5 +1,5 @@
+#!/usr/bin/env bash
 (
-    shopt -s nullglob
 
     for file in *.jpg *.jpeg *.png; do
         output="${file%.*}.webp"
