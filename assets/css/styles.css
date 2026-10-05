@@ -1136,3 +1136,11 @@ h4 {
     white-space: normal;
   }
 }
+
+.experience-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.experience-card .experience-points {
+  max-width: none;
+}
