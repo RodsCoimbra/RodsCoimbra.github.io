@@ -79,6 +79,11 @@ const portfolioDetails = {
         caption: "RTAB-Map implementation on Humanoid Robot.",
       },
       {
+        type: "youtube",
+        id: "n-c-9VN09lo",
+        caption: "Humanoid basic manipulation capabilities.",
+      },
+      {
         type: "image",
         src: "assets/images/oracle_project.webp",
         alt: "FOMO-HODOR research project",
@@ -127,6 +132,11 @@ const portfolioDetails = {
         caption: "RoboCup Portugal podium photograph.",
       },
       {
+        type: "youtube",
+        id: "wAbXj2K2anA",
+        caption: "Log visualization tool developed for the SocRob@Home team.",
+      },
+      {
         type: "document",
         src: "assets/images/certificate_robocup_korea.pdf",
         label: "RoboCup Korea certificate",
@@ -160,6 +170,26 @@ const portfolioDetails = {
         src: "assets/images/icarsc_presentation.webp",
         alt: "Rodrigo Coimbra presenting at ICARSC 2026",
         caption: "Research presentation at ICARSC 2026, Barcelos.",
+      },
+      {
+        type: "youtube",
+        id: "cG3SJvgvgfo",
+        caption: "Full-Body Navigation · Corridor Bookstore.",
+      },
+      {
+        type: "youtube",
+        id: "-e_b_VXjuKc",
+        caption: "Full-Body Navigation · Corridor 2 Bookstore.",
+      },
+      {
+        type: "youtube",
+        id: "f9duincHxqE",
+        caption: "Full-Body Navigation · Global Planner Integration.",
+      },
+      {
+        type: "youtube",
+        id: "xz9AyQ5F8fU",
+        caption: "Full-Body Navigation · Dynamic Obstacles.",
       },
       {
         type: "document",
@@ -258,6 +288,26 @@ const portfolioDetails = {
         src: "assets/images/icarsc_presentation.webp",
         alt: "Rodrigo Coimbra delivering his ICARSC presentation",
         caption: "ICARSC 2026 research presentation.",
+      },
+      {
+        type: "youtube",
+        id: "cG3SJvgvgfo",
+        caption: "Full-Body Navigation · Corridor Bookstore.",
+      },
+      {
+        type: "youtube",
+        id: "-e_b_VXjuKc",
+        caption: "Full-Body Navigation · Corridor 2 Bookstore.",
+      },
+      {
+        type: "youtube",
+        id: "f9duincHxqE",
+        caption: "Full-Body Navigation · Global Planner Integration.",
+      },
+      {
+        type: "youtube",
+        id: "xz9AyQ5F8fU",
+        caption: "Full-Body Navigation · Dynamic Obstacles.",
       },
       {
         type: "document",
