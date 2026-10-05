@@ -18,16 +18,15 @@ const portfolioDetails = {
     ],
     media: [
       {
-        type: "video",
-        src: "assets/videos/eurobin_demo.mp4",
+        type: "youtube",
+        id: "IQKxkcPtKPo",
         caption: "Demonstration of the euROBIN task.",
-        poster: "assets/images/eurobin_demo.webp",
       },
       {
         type: "image",
         src: "assets/images/eurobin-project.webp",
         alt: "euROBIN domestic-robotics demonstration",
-        caption: "euROBIN domestic-robotics demonstration",
+        caption: "euROBIN domestic-robotics demonstration.",
       },
       {
         type: "image",
@@ -60,19 +59,24 @@ const portfolioDetails = {
     ],
     media: [
       {
-        type: "video",
-        src: "assets/videos/autonomous_navigation_lola.mp4",
-        caption: "LOLA autonomous navigation · FOMO-HODOR.",
+        type: "youtube",
+        id: "ilPFfnMnQAI",
+        caption: "Humanoid Autonomous Navigation.",
       },
       {
-        type: "video",
-        src: "assets/videos/lola_navigation_obstacle_avoidance.mp4",
-        caption: "LOLA navigation and obstacle avoidance · FOMO-HODOR.",
+        type: "youtube",
+        id: "mzODX0W68eU",
+        caption: "Humanoid Obstacle Avoidance.",
       },
       {
-        type: "video",
-        src: "assets/videos/rtabmap.mp4",
-        caption: "RTAB-Map mapping demonstration for LOLA · FOMO-HODOR.",
+        type: "youtube",
+        id: "9UQapqZuXL4",
+        caption: "Humanoid Safe Navigation Around People.",
+      },
+      {
+        type: "youtube",
+        id: "ohKSb__pI68",
+        caption: "RTAB-Map implementation on Humanoid Robot.",
       },
       {
         type: "image",
@@ -320,12 +324,6 @@ const portfolioDetails = {
         src: "assets/images/volleyball_team.webp",
         alt: "Rodrigo Coimbra playing volleyball",
         caption: "Volleyball team photo.",
-      },
-      {
-        type: "image",
-        src: "assets/images/volleyball_team_2.webp",
-        alt: "Rodrigo Coimbra playing volleyball",
-        caption: "Volleyball competition photo.",
       },
     ],
     cover: "assets/images/volleyball_team_back.webp",
