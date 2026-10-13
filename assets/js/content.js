@@ -225,8 +225,9 @@ const portfolioDetails = {
     summary:
       "Introducing students to our robotics research and live demonstrations.",
     paragraphs: [
-      "I helped promote SocRob@Home to students through events such as JEEC, explaining the project's goals and our work on domestic robots.",
+      "I helped promote SocRob@Home to students through outreach events, explaining the project's goals and our work on domestic robots.",
       "Science outreach is another part of my work at ISR, including presenting research and running live robot demonstrations for visiting schools and members of the public.",
+      "These activities have included JEEC, Técnico Days, European Researchers' Night, and events at Pavilhão do Conhecimento.",
     ],
     media: [
       {
