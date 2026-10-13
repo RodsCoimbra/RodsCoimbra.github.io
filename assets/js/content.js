@@ -7,7 +7,7 @@ const portfolioDetails = {
     paragraphs: [
       "Within euROBIN, I improved the manipulation pipeline for a domestic-robotics demonstration presented at the European Parliament in Brussels. I integrated components from partner research teams and focused on making the full pick-and-place workflow robust enough for repeated live operation.",
       "I developed a state machine that coordinated perception, motion planning, grasping, and recovery behaviour, with fail-safes for camera detections, dynamic goals, reachability failures, and unsuccessful grasps. The system could validate complete trajectories before moving, select the shortest valid plan, retry failed picks, and maintain up-to-date environment data.",
-      "These improvements transformed an unreliable pipeline into a stable demonstration system: across four 10-minute demonstrations at the European Parliament, the robot completed multiple picks continuously and recovered from failures without requiring operator intervention.",
+      "These improvements transformed an unreliable pipeline into a stable demonstration system: across four 10-minute demonstrations at the European Parliament, the robot repeatedly completed pick-and-place operations and recovered from failures without operator intervention.",
     ],
     media: [
       {
@@ -47,7 +47,7 @@ const portfolioDetails = {
       "Mapping, autonomous navigation, obstacle avoidance, and basic manipulation for humanoid domestic robots.",
     paragraphs: [
       "FOMO-HODOR brings together ISR, INESC-ID, and the University of Texas at Austin to explore foundation models for humanoid domestic robots.",
-      "I contributed with core robot capabilities for LOLA, the project's humanoid robot, working on environment mapping, localization, autonomous navigation, and arm motion planning.",
+      "I contributed to the development of core capabilities for LOLA, the project's humanoid robot, including environment mapping, localization, autonomous navigation, and arm motion planning.",
       "For navigation, I implemented mapping and localization with RTAB-Map and integrated autonomous navigation and obstacle avoidance using Nav2. For manipulation, I used cuRobo to plan arm motions while avoiding collisions with the robot and its environment, providing a foundation for future manipulation tasks.",
     ],
     media: [
@@ -127,13 +127,13 @@ const portfolioDetails = {
         type: "document",
         src: "assets/images/certificate_robocup_korea.pdf",
         label: "RoboCup Korea certificate",
-        caption: "RoboCup Korea certificate",
+        caption: "RoboCup Korea certificate.",
       },
       {
         type: "document",
         src: "assets/images/certificate_robocup_portugal.pdf",
         label: "RoboCup Portugal certificate",
-        caption: "RoboCup Portugal certificate",
+        caption: "RoboCup Portugal certificate.",
       },
     ],
     link: {
@@ -185,7 +185,7 @@ const portfolioDetails = {
         type: "document",
         src: "assets/images/ICARSC_Certificate.pdf",
         label: "ICARSC certificate",
-        caption: "ICARSC certificate",
+        caption: "ICARSC certificate.",
       },
     ],
     link: {
@@ -214,7 +214,7 @@ const portfolioDetails = {
         type: "document",
         src: "assets/images/certificate_intership_quidgest.pdf",
         label: "Quidgest internship certificate",
-        caption: "Quidgest internship certificate",
+        caption: "Quidgest internship certificate.",
       },
     ],
     cover: "assets/images/quidgest.webp",
@@ -322,7 +322,7 @@ const portfolioDetails = {
         type: "document",
         src: "assets/images/certificate_nos_hackaton_2025.pdf",
         label: "NOS Hackathon 2025 certificate",
-        caption: "NOS Hackathon 2025 certificate",
+        caption: "NOS Hackathon 2025 certificate.",
       },
     ],
     coverKind: "hackathon",
