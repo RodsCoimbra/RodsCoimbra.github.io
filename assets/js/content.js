@@ -272,12 +272,11 @@ const portfolioDetails = {
   },
   volleyball: {
     title: "Volleyball",
-    meta: "Secondary school",
-    summary:
-      "Team volleyball throughout my final three years of secondary school.",
+    meta: "High school",
+    summary: "Team volleyball throughout my final three years of high school.",
     paragraphs: [
-      "I was part of a volleyball team from the 10th to the 12th grade.",
-      "Team sport was part of my secondary-school years alongside my studies.",
+      "I was part of a volleyball team from 10th to 12th grade.",
+      "Team sport was part of my high school years alongside my studies.",
     ],
     media: [
       {
