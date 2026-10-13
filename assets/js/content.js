@@ -1,11 +1,3 @@
-/* Expanded card descriptions and galleries. Paths are relative to index.html.
-   Media: image, video, document (PDF first-page image), youtube.
-   PDF.js renders document page 1 automatically, only when selected.
-   Optional preview: "assets/images/certificate.webp" uses a pre-converted
-   image instead, without loading PDF.js. The original PDF stays linked in its caption.
-   Optional video.poster and video.tracks are supported. No autoplay.
-   Static card covers and summaries are edited separately in index.html.
-*/
 const portfolioDetails = {
   eurobin: {
     title: "euROBIN",
@@ -13,8 +5,9 @@ const portfolioDetails = {
     summary:
       "Domestic-robotics demonstration at the European Parliament, developed with European research partners.",
     paragraphs: [
-      "Within euROBIN, I developed a domestic-robotics demonstration shown at the European Parliament in Brussels.",
-      "I coordinated integration work with partner research teams, bringing components of their research together on our robot for a shared demonstration.",
+      "Within euROBIN, I improved the manipulation pipeline for a domestic-robotics demonstration presented at the European Parliament in Brussels. I integrated components from partner research teams and focused on making the full pick-and-place workflow robust enough for repeated live operation.",
+      "I developed a state machine that coordinated perception, motion planning, grasping, and recovery behaviour, with fail-safes for camera detections, dynamic goals, reachability failures, and unsuccessful grasps. The system could validate complete trajectories before moving, select the shortest valid plan, retry failed picks, and maintain up-to-date environment data.",
+      "These improvements transformed an unreliable pipeline into a stable demonstration system: across four 10-minute demonstrations at the European Parliament, the robot completed multiple picks continuously and recovered from failures without requiring operator intervention.",
     ],
     media: [
       {
@@ -54,8 +47,8 @@ const portfolioDetails = {
       "Mapping, autonomous navigation, obstacle avoidance, and basic manipulation for humanoid domestic robots.",
     paragraphs: [
       "FOMO-HODOR brings together ISR, INESC-ID, and the University of Texas at Austin to explore foundation models for humanoid domestic robots.",
-      "I contributed environment mapping, navigation, and basic manipulation capabilities, collaborating with researchers on the core robot capabilities needed for the project.",
-      "For LOLA, my autonomous-navigation work included mapping with RTAB-Map, autonomous navigation, and obstacle avoidance. The gallery contains demonstrations of these capabilities within FOMO-HODOR.",
+      "I contributed with core robot capabilities for LOLA, the project's humanoid robot, working on environment mapping, localization, autonomous navigation, and arm motion planning.",
+      "For navigation, I implemented mapping and localization with RTAB-Map and integrated autonomous navigation and obstacle avoidance using Nav2. For manipulation, I used cuRobo to plan arm motions while avoiding collisions with the robot and its environment, providing a foundation for future manipulation tasks.",
     ],
     media: [
       {
@@ -85,12 +78,6 @@ const portfolioDetails = {
       },
       {
         type: "image",
-        src: "assets/images/oracle_project.webp",
-        alt: "FOMO-HODOR research project",
-        caption: "FOMO-HODOR research project",
-      },
-      {
-        type: "image",
         src: "assets/images/LOLA.webp",
         alt: "LOLA robot",
         caption: "LOLA, the robot used for the project.",
@@ -108,9 +95,9 @@ const portfolioDetails = {
     summary:
       "Humanoid navigation and mobile-manipulator software for domestic service robotics and RoboCup@Home.",
     paragraphs: [
-      "As part of SocRob@Home, my primary responsibility has been developing autonomous navigation for the team’s humanoid robot.",
-      "I also contribute to the mobile manipulator’s manipulation pipeline. The project connects domestic-robotics research with practical demonstrations and international competitions, including RoboCup@Home.",
-      "The gallery brings together RoboCup team photographs, hands-on competition work, the Portugal podium photograph, and certificates from the Korea and Portugal events.",
+      "As part of SocRob@Home, I develop autonomous navigation for the team's humanoid robot and contribute to the mobile manipulator's software for domestic-robotics tasks and RoboCup@Home competitions.",
+      "For RoboCup, I improved the pick-and-place pipeline for a table-cleaning task in which the robot had to place dishes in a dishwasher, dispose of selected objects in a bin, and organize remaining objects in a cabinet. I also developed a common client node that allowed multiple state-machine states to run in parallel, reducing task completion time by enabling independent components to execute concurrently.",
+      "To support debugging and competition preparation, I developed a logging system that records pipeline events in JSONL and an application for exploring them. The tool provides a graphical view of state-machine execution and system flow, helping the team identify failures and understand robot behaviour more quickly. The gallery includes a demonstration of this tool, alongside RoboCup photographs, competition work, and certificates from the Korea and Portugal events.",
     ],
     media: [
       {
@@ -163,6 +150,9 @@ const portfolioDetails = {
     paragraphs: [
       "I am the first author of a research paper on full-body local planning of a mobile manipulator using reinforcement learning.",
       "I presented the work at the 2026 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC) in Barcelos, Portugal.",
+      "This publication came from my Master's thesis on full-body planning for mobile manipulators. Mobile manipulators combine a mobile base with a robotic arm, creating a high-dimensional control problem: moving the base and arm together must account for many more constraints than controlling each part separately.",
+      "The paper presents a reinforcement-learning local planner that moves the mobile base and manipulator arm simultaneously toward a target pose and arm configuration, while avoiding collisions with the environment. It uses a teacher-student framework: a teacher agent is trained with privileged information, and a student agent learns to perform the task from sensor observations, using a downsampled point-cloud representation for better generalization to unseen obstacles.",
+      "The results show that the learned local planner can navigate cluttered environments and transfer to more complex obstacle shapes than those seen during training. In the full thesis, I further integrated this local planner with a classical global planner, enabling navigation over longer distances and more complex paths.",
     ],
     media: [
       {
@@ -229,38 +219,13 @@ const portfolioDetails = {
     ],
     cover: "assets/images/quidgest.webp",
   },
-  parliament: {
-    title: "euROBIN demonstration",
-    meta: "European Parliament · Brussels",
-    summary:
-      "A shared demonstration of domestic robotics with European research teams.",
-    paragraphs: [
-      "I took part in a cooperative demonstration at the European Parliament with other research teams from the euROBIN project.",
-      "The event showcased domestic robotic tasks and provided an opportunity to communicate the work of European robotics research groups.",
-    ],
-    media: [
-      {
-        type: "image",
-        src: "assets/images/eurobin-all-teams.webp",
-        alt: "Research teams at the European Parliament demonstration",
-        caption: "European Parliament demonstration, Brussels.",
-      },
-      {
-        type: "image",
-        src: "assets/images/eurobin-project.webp",
-        alt: "euROBIN robotics demonstration",
-        caption: "Domestic-robotics demonstration.",
-      },
-    ],
-    cover: "assets/images/eurobin-all-teams.webp",
-  },
   outreach: {
     title: "Sharing robotics research",
     meta: "Science outreach · JEEC",
     summary:
       "Introducing students to our robotics research and live demonstrations.",
     paragraphs: [
-      "I helped promote SocRob@Home to students through events such as JEEC, explaining the project’s goals and our work on domestic robots.",
+      "I helped promote SocRob@Home to students through events such as JEEC, explaining the project's goals and our work on domestic robots.",
       "Science outreach is another part of my work at ISR, including presenting research and running live robot demonstrations for visiting schools and members of the public.",
     ],
     media: [
@@ -272,55 +237,6 @@ const portfolioDetails = {
       },
     ],
     cover: "assets/images/jeec.webp",
-  },
-  presentation: {
-    title: "Presenting learning-based planning research",
-    meta: "ICARSC 2026 · Barcelos",
-    summary:
-      "Communicating my full-body local planning research to the robotics community.",
-    paragraphs: [
-      "At ICARSC 2026, I presented our paper on full-body local planning of a mobile manipulator using reinforcement learning.",
-      "The presentation formed part of sharing the research with the robotics community at the conference.",
-    ],
-    media: [
-      {
-        type: "image",
-        src: "assets/images/icarsc_presentation.webp",
-        alt: "Rodrigo Coimbra delivering his ICARSC presentation",
-        caption: "ICARSC 2026 research presentation.",
-      },
-      {
-        type: "youtube",
-        id: "cG3SJvgvgfo",
-        caption: "Full-Body Navigation · Corridor Bookstore.",
-      },
-      {
-        type: "youtube",
-        id: "-e_b_VXjuKc",
-        caption: "Full-Body Navigation · Corridor 2 Bookstore.",
-      },
-      {
-        type: "youtube",
-        id: "f9duincHxqE",
-        caption: "Full-Body Navigation · Global Planner Integration.",
-      },
-      {
-        type: "youtube",
-        id: "xz9AyQ5F8fU",
-        caption: "Full-Body Navigation · Dynamic Obstacles.",
-      },
-      {
-        type: "document",
-        src: "assets/images/ICARSC_Certificate.pdf",
-        label: "ICARSC certificate",
-        caption: "ICARSC certificate",
-      },
-    ],
-    link: {
-      href: "https://ieeexplore.ieee.org/document/11523319",
-      label: "View paper",
-    },
-    cover: "assets/images/icarsc_presentation.webp",
   },
   hiking: {
     title: "Hiking & running",
