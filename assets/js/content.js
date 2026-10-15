@@ -16,6 +16,11 @@ const portfolioDetails = {
         caption: "Demonstration of the euROBIN task.",
       },
       {
+        type: "youtube",
+        id: "LpT9lbQYOMc",
+        caption: "euROBIN Demonstration at the European Parliament",
+      },
+      {
         type: "image",
         src: "assets/images/eurobin-project.webp",
         alt: "euROBIN domestic-robotics demonstration",
